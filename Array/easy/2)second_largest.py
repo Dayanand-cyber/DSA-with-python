@@ -5,7 +5,7 @@ Problem Statement: Given an array, find the second smallest and second largest e
 n=int(input("enter the n :"))
 array=[int(input("enter the element :")) for i in range(1,n+1)]
 
-
+#optimal apporch
 def second_largest(array):
     if(len(array)<=1):return -1
     
