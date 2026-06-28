@@ -17,5 +17,22 @@ def two_sum(arr,target):
             if(arr[i]+arr[j]==target):
                 return "yes"
     return "no"
+
+#optimal
+def two_sum_op(arr,target):
+    arr.sort()
+    left=0
+    right=len(arr)-1
+    while(left<right):
+        sum=arr[left]+arr[right]
+        if(sum==target):
+            return "yes"
+        elif sum>target:
+            right-=1
+        elif sum<target:
+            left+=1
+        else:
+            pass
+    return "no"
 target=int(input("enter the target :"))
-print(f"does the array have aleast one pair whos sum is {target} :{two_sum(arr,target)}")
+print(f"does the array have aleast one pair whos sum is {target} :{two_sum_op(arr,target)}")
