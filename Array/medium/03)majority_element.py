@@ -7,7 +7,7 @@ The majority element of an array is an element that appears more than n/2 times 
 n=int(input("enter the n :"))
 arr=[int(input("enter the element :")) for i in range (n)]
 
-#optimal
+#brute force
 def majority_elemet(arr):
     n=len(arr)
     element=-1
@@ -19,5 +19,7 @@ def majority_elemet(arr):
         if count>n//2:
             element=i
     return element
+
+#optimal
 
 print(f"the majority element is {majority_elemet(arr)}")
