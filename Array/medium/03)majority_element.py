@@ -8,7 +8,7 @@ n=int(input("enter the n :"))
 arr=[int(input("enter the element :")) for i in range (n)]
 
 #brute force
-def majority_elemet(arr):
+def majority_element(arr):
     n=len(arr)
     element=-1
     for i in arr:
@@ -21,5 +21,23 @@ def majority_elemet(arr):
     return element
 
 #optimal
+def majority_element_op(arr):
+    n=len(arr)
+    element=arr[0]
+    count=1
+    for i in range (n):
+        if count == 0:
+            element=arr[i]
 
-print(f"the majority element is {majority_elemet(arr)}")
+        if arr[i] == element:
+            count+=1
+        else:
+            count-=1
+    element_count=0
+    for i in arr:
+        if i == element:
+            element_count+=1
+    if element_count>n//2:return element
+    else:return None
+
+print(f"the majority element is {majority_element_op(arr)}")
