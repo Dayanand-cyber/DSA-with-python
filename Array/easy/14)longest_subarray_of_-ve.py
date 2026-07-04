@@ -5,18 +5,17 @@ Problem Statement: Given an array containing both positive and negative integers
 n=int(input("enter the n :"))
 array=[int(input("enter the element :")) for i in range(1,n+1)]
 
+#brute force
 def long_sum(array):
-    left=0
-    right=0
     n=len(array)
-    count=0
-    max=0
-    while(right<n):
-        while(left<=right and summ>0):
-            left+=1
-            sum-=array[left]
-        
+    length=0
+    for i in range(n):
+        sum=array[i]
+        for j in range(i+1,n):
+            sum+=array[j]
+            if sum==0:length=max(length,j-i+1)
+    return length
 
-        if(right<n):
-            right+=1
-            summ+=array[right]
+
+
+print(f"the lenght of longest subarray with sum zero is {long_sum(array)}")
