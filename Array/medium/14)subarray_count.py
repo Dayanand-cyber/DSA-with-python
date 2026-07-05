@@ -5,6 +5,7 @@ Problem Statement: Given an array of integers and an integer k, return the total
 n=int(input("enter the n :"))
 arr=[int(input("enter the element :")) for i in range (n)]
 
+#brute force
 def subarray_count(arr,k):
     n=len(arr)
     count=0
