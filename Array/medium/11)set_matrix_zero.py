@@ -27,4 +27,28 @@ def set_zero(arr,row,col):
                 arr[i][j]=0
     return arr
 
-print(set_zero(arr,row,col))
+#optimal
+def set_zero_op(arr,row,col):
+    first_col=False
+    for i in range(row):
+        for j in range(col):
+            if arr[i][j]==0:
+                arr[i][0]=0
+                if j==0:
+                    if not first_col:first_col=True
+                else:
+                    arr[0][j]=0
+    for i in range(1,row):
+        for j in range(1,col):
+            if arr[i][0]==0 or arr[0][j]==0:
+                arr[i][j]=0
+    if arr[0][0]==0:
+        for j in range(col):
+            arr[0][j]=0
+    if first_col:
+        for i in range(row):
+            arr[i][0]=0    
+    return arr        
+
+
+print(set_zero_op(arr,row,col))
